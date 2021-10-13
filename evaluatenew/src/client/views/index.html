@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sentiment Analyzer</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+        <p>Enter a URL of an article / a blog to discover its sentiment.</p>
+        <section>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+              <input id="url" type="text" name="input" value="" placeholder="Enter URL here">
+              <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+              </form>
+        </section>
+
+        <section>
+          <strong>Form Results:</strong>
+          <div id="polarity">
+            
+          </div>
+          <div id="agreement">
+           
+          </div>
+          <div id="subjectivity">
+              
+          </div>
+          <div id="confidence">
+              
+          </div>
+          <div id="irony">
+              
+          </div>
+          <div id="score_tag"></div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <ul>
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram-square"></i>
+       <i class="fab fa-twitter-square"></i>
+      </ul>
+      
+    </footer>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+        })
+      }
+    </script>
+    <script src="https://kit.fontawesome.com/bdb8a6757f.js" crossorigin="anonymous"></script>
+  </body>
+</html>
